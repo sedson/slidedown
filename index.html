@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Slidedown Demo</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="top">
+      <p class="date">March 1, 2020</p>
+      <p class="title">Slidedown Demo</p>
+      <p class="course">ADSN</p>
+    </div>
+    <!---------------------------------->
+    
+      <div class="slide"><div class="content">
+    
+      <h1>Slidedown Demo</h1>
+    
+      <h4>March 1</h4>
+    
+      <img src="./demo.gif"  class=" stretch mult">
+    
+      </div></div>
+    
+      <div class="slide"><div class="content">
+    
+      <h2>Agenda</h2>
+    
+      <p><span class="task-button" onclick="taskButton(event)"><span class="check">×</span></span>Task 1</p>
+    
+      <p><span class="task-button" onclick="taskButton(event)"><span class="check">×</span></span>Topic 2</p>
+    
+      <p><span class="task-button" onclick="taskButton(event)"><span class="check">×</span></span>Excercise 3</p>
+    
+      <p><span class="task-button" onclick="taskButton(event)"><span class="check">×</span></span>Homework assignment</p>
+    
+      </div></div>
+    
+      <div class="slide"><div class="content">
+    
+      <h2>h2</h2>
+    
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+      <h3>h3</h3>
+    
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    
+      </div></div>
+    
+      <div class="slide"><div class="content">
+    
+      <h2>This is an H2</h2>
+    
+      <h3>This is an H3</h3>
+    
+      <h4>This is an H4!</h4>
+    
+      <p>This is a paragraph – with <em>italics</em> and <strong>bold.</strong></p>
+    
+      <blockquote>This is a quote</blockquote>
+    
+      </div></div>
+    
+      <div class="slide yellow"><div class="content">
+    
+      <h2>H2 Test</h2>
+    
+      <li>item</li>
+    
+      <li>item</li>
+    
+      <p>this is a paragraph test, where <strong>this <em>whole</em> phrase <em>should</em> be strong</strong></p>
+    
+      <h3 class=" yellow">a yellow h3</h3>
+    
+      </div></div>
+    
+      <div class="slide dark alt"><div class="content">
+    
+      <h2 class=" serif">A New Section wiht a <a>link</a> to the outside world</h2>
+    
+      </div></div>
+    
+      <div class="slide"><div class="content">
+    
+      <img src="https://sedson.github.io/ADSN-425-slides/Resources/12P-FollowThrough2.gif"  class=" center">
+    
+      <p class=" caption">caption for the image</p>
+    
+      </div></div>
+    
+      <div class="slide blue alt"><div class="content">
+    
+      <img src="./link_to_image"  class=" corner">
+    
+      <p class=" caption">this is a p tag caption</p>
+    
+      </div></div>
+    
+      <div class="slide"><div class="content">
+    
+      <h1>Agenda</h1>
+    
+      </div></div>
+    
+    <!---------------------------------->
+    <script type="text/javascript">
+      function taskButton(event) {
+        console.log(event.currentTarget)
+        event.currentTarget.parentElement.classList.toggle("done");
+      }
+      let pos = 0
+
+      window.addEventListener("keydown", function(e) {
+        if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+            switch (e.keyCode) {
+              case (40) :
+                pos++;
+                window.scrollTo(0, pos * window.innerHeight)
+                break
+              case (39) :
+                pos--
+                window.scrollTo(0, pos * window.innerHeight)
+                break
+            }
+            e.preventDefault()
+        }
+    }, false);
+    </script>
+  </body>
+</html>
